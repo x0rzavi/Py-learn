@@ -5,7 +5,7 @@ sub_str_len = len(sub_str)
 
 i = c = 0
 while i < line_len:
-    i = line.find(sub_str, i)
+    i = line.find(sub_str, i) # start finding from position & save position
     if i == -1:
         break
     else:

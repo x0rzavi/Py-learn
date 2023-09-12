@@ -1,4 +1,4 @@
-sentence = str(input("Enter sentence: "))
+sentence = str(input('Enter sentence: '))
 vowels = 'aeiouAEIOU'
 c = 0
 for char in sentence:
