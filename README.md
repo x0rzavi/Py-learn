@@ -140,6 +140,10 @@
 
 ---
 
+## Miscellaneous
+
+1. Write a program to calculate the area and perimeter of a circle.
+
 ## Projects
 
 1. Consider the following series: `1,1,2,3,4,9,8,27,16,81,32,243,64,729,128,2187…` This series is a mixture of 2 series. Write a program to find the nth term in the series. The nth term calculated by the program should be printed on the screen. No other character/string or message should be printed besides the value of the nth term.
