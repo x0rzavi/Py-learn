@@ -1,5 +1,5 @@
 num_list = input('Enter number list: ').split()
-num_list = [int(n) for n in num_list]
+num_list = [float(n) for n in num_list]
 odd_nums = [n for n in num_list if n % 2 != 0]
 new_list = []
 
