@@ -1,7 +1,8 @@
 import random
-# import secrets
+# import secrets # cryptographically more secure
 import string
 
+# generate a valid number
 def valid_number(prompt: str):
     while True:
         try:
@@ -27,11 +28,13 @@ def toggle_opt(options_dict: dict, options_name: str):
     options_dict[options_name] = not options_dict[options_name]
     print_opt(options_dict)
 
+# toggleable options for password
 options = {'letters_lower': True,
            'letters_upper': True,
            'digits': True,
            'special_chars': True}
 
+# check if ascii characters are included
 def check_opt(options_dict: dict):
     if not (options_dict['letters_lower'] or options_dict['letters_upper']):
         print('Atleast One Of letters_lower Or letters_upper Must Be Toggled True !')
@@ -39,6 +42,7 @@ def check_opt(options_dict: dict):
     else:
         return True
 
+# define alphabet set
 letters_lower = string.ascii_lowercase
 letters_upper = string.ascii_uppercase
 digits = string.digits
@@ -65,27 +69,31 @@ letters = alphabet = prompt = ''
 min_digits = min_special = 0
 pwd_length = valid_number('Enter Password Length: ')
 
+# add characters to final alphabet if toggled True
 for key in options.keys():
     if options[key]:
         if 'letters' in key:
             letters += eval(key)
         alphabet += eval(key)
 
+# validate number of digits and special_chars
 while True:
     if options['digits']:
         min_digits = valid_number('Enter Minimum Digits: ')
     if options['special_chars']:
-        min_digits = valid_number('Enter Minimum Special Characters: ')
+        min_special = valid_number('Enter Minimum Special Characters: ')
     if min_digits + min_special >= pwd_length:
         print('Total Number Of special_chars + digits Cannot Be >= Password Length')
     else:
         break
 
+# generate secure password
 while True:
     pwd = ''
     # pwd += ''.join(secrets.choice(alphabet) for _ in range(pwd_length))
     pwd += ''.join(random.choice(alphabet) for _ in range(pwd_length))
 
+    # check if minimum requirements are met
     if (any(char in letters for char in pwd) and
         sum(char in digits for char in pwd) >= min_digits and 
         sum(char in special_chars for char in pwd) >= min_special):
