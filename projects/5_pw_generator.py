@@ -10,7 +10,7 @@ def valid_number(prompt: str):
             if n <= 0:
                 raise Exception
         except Exception:
-            print('Invalid Input !')
+            print('Invalid Input !\n')
         else:
             return n
 
@@ -63,11 +63,18 @@ while(True):
         if check_opt(options):
             break
     else:
-        print('Invalid Choice !')
+        print('Invalid Choice !\n')
 
 letters = alphabet = prompt = ''
 min_digits = min_special = 0
-pwd_length = valid_number('Enter Password Length: ')
+while True:
+    pwd_length = valid_number('Enter Password Length: ')
+    if pwd_length < 8:
+        print('Password Length Too Short !\n')
+    elif pwd_length > 80:
+        print('Password Length Too Long !\n')
+    else:
+        break
 
 # add characters to final alphabet if toggled True
 for key in options.keys():
