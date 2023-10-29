@@ -6,20 +6,22 @@ def valid_number(prompt: str):
     while True:
         try:
             n = int(input(prompt))
-            if n < 0:
+            if n <= 0:
                 raise Exception
         except Exception:
-            print('Invalid input!')
+            print('Invalid Input !')
         else:
             return n
 
 def print_opt(options_dict: dict):
+    print()
     c = 1
     print('Configure Password Options:')
     for key, value in options_dict.items():
         print('{}. {}: {}'.format(c, key, value))
         c += 1
-    print('{}. {}'.format(c, 'continue'))
+    print('{}. {}'.format(c, 'Generate Password'))
+    print()
 
 def toggle_opt(options_dict: dict, options_name: str):
     options_dict[options_name] = not options_dict[options_name]
@@ -32,7 +34,7 @@ options = {'letters_lower': True,
 
 def check_opt(options_dict: dict):
     if not (options_dict['letters_lower'] or options_dict['letters_upper']):
-        print('Atlease one of letters_lower or letters_upper must be toggled ON!')
+        print('Atleast One Of letters_lower Or letters_upper Must Be Toggled True !')
         return False
     else:
         return True
@@ -57,12 +59,11 @@ while(True):
         if check_opt(options):
             break
     else:
-        print('Invalid choice!')
+        print('Invalid Choice !')
 
-letters = ''
-alphabet = ''
+letters = alphabet = prompt = ''
 min_digits = min_special = 0
-pwd_length = valid_number('Enter password length: ')
+pwd_length = valid_number('Enter Password Length: ')
 
 for key in options.keys():
     if options[key]:
@@ -72,11 +73,11 @@ for key in options.keys():
 
 while True:
     if options['digits']:
-        min_digits = valid_number('Enter minimum digits: ')
+        min_digits = valid_number('Enter Minimum Digits: ')
     if options['special_chars']:
-        min_digits = valid_number('Enter minimum special characters: ')
+        min_digits = valid_number('Enter Minimum Special Characters: ')
     if min_digits + min_special >= pwd_length:
-        print('Total number of special + digits cannot be >= pwd length')
+        print('Total Number Of special_chars + digits Cannot Be >= Password Length')
     else:
         break
 
