@@ -12,4 +12,4 @@ while i < line_len:
         c += 1
         # i += sub_str_len # Non-overlapping
         i += 1 # Overlapping
-print('No of occurences:', c)
+print('No of occurrences:', c)

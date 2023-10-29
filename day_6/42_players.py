@@ -8,7 +8,7 @@ for i in range(n):
     print()
 
 while(True):
-    name = input('Enter player name to retrive runs: ').capitalize()
+    name = input('Enter player name to retrieve runs: ').capitalize()
     if name in cricket:
         print(cricket[name])
     else:
