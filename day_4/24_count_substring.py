@@ -1,15 +1,11 @@
-line = str(input('Enter string: '))
-sub_str = str(input('Enter substring: '))
+line = str(input("Enter string: "))
+sub_str = str(input("Enter substring: "))
 line_len = len(line)
 sub_str_len = len(sub_str)
 
-i = c = 0
-while i < line_len:
-    i = line.find(sub_str, i) # start finding from position & save position
-    if i == -1:
-        break
-    else:
-        c += 1
-        # i += sub_str_len # Non-overlapping
-        i += 1 # Overlapping
-print('No of occurrences:', c)
+count = 0
+# for i in range(0, line_len, sub_str_len): # non overlapping
+for i in range(line_len):  # overlapping
+    if line[i : i + sub_str_len] == sub_str:
+        count += 1
+print(f"No of occurrences: {count}")
