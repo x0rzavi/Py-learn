@@ -1,5 +1,5 @@
-num_list = input('Enter number list: ').split()
-num_list = [float(n) for n in num_list] # convert elements to int for proper comparison
+num_list = input("Enter number list: ").split()
+num_list = [float(n) for n in num_list]  # convert elements to int for proper comparison
 
 min_num = num_list[0]
 max_num = num_list[0]
@@ -9,5 +9,5 @@ for num in num_list:
     if num > max_num:
         max_num = num
 
-print('Minimum number is:', min_num)
-print('Maximum number is:', max_num)
+print("Minimum number is:", min_num)
+print("Maximum number is:", max_num)

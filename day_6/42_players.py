@@ -1,14 +1,14 @@
-n = int(input('Enter number of players: '))
+n = int(input("Enter number of players: "))
 cricket = {}
 
 for i in range(n):
-    name = input('Enter player name: ').capitalize()
-    runs = int(input('Enter runs scored: '))
+    name = input("Enter player name: ").capitalize()
+    runs = int(input("Enter runs scored: "))
     cricket[name] = runs
     print()
 
-while(True):
-    name = input('Enter player name to retrieve runs: ').capitalize()
+while True:
+    name = input("Enter player name to retrieve runs: ").capitalize()
     if name in cricket:
         print(cricket[name])
     else:

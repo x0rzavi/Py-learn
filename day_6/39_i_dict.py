@@ -1,4 +1,4 @@
-n = int(input('Enter n: '))
+n = int(input("Enter n: "))
 dict = {}
 
 for i in range(n + 1):

@@ -9,6 +9,7 @@ def count(line):
                 upper += 1
     return lower, upper
 
-line = input('Enter string: ')
-print('Lowercase character count:', count(line)[0])
-print('Uppercase character count:', count(line)[1])
+
+line = input("Enter string: ")
+print("Lowercase character count:", count(line)[0])
+print("Uppercase character count:", count(line)[1])

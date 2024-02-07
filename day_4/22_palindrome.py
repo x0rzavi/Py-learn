@@ -8,8 +8,8 @@ for i in range(int(line_len / 2)):
 print('Palindrome')
 """
 
-line = str(input('Enter string: ')).lower()
+line = str(input("Enter string: ")).lower()
 if line == line[::-1]:
-    print('Palindrome')
+    print("Palindrome")
 else:
-    print('Not Palindrome')
+    print("Not Palindrome")

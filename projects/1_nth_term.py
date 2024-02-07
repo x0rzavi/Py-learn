@@ -5,5 +5,6 @@ def nth_term(n):
     else:
         return 2 ** (n // 2)
 
-n = int(input('Enter n: '))
+
+n = int(input("Enter n: "))
 print(nth_term(n))

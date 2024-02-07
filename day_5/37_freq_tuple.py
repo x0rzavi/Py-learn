@@ -1,4 +1,4 @@
-my_list = input('Enter elements: ').split()
+my_list = input("Enter elements: ").split()
 my_tuple = tuple(my_list)
 freq = {}
 
